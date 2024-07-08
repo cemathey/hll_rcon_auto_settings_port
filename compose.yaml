@@ -1,0 +1,10 @@
+name: hll_rcon_auto_settings_port
+services:
+    hll_rcon_auto_settings_port:
+        restart: unless-stopped
+        image: hll_rcon_auto_settings_port:latest
+        build:
+          context: .
+          dockerfile: ./Dockerfile
+        ports:
+          - 8080:8000

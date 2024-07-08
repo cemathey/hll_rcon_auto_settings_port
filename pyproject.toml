@@ -8,6 +8,10 @@ packages = [{include = "hll_rcon_auto_settings_port"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+flask = "^3.0.3"
+pydantic = "^2.7.2"
+flask-wtf = "^1.2.1"
+gunicorn = "^22.0.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
