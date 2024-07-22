@@ -11,12 +11,12 @@ app = Flask(__name__)
 
 class ConvertForm(Form):
     from_version = SelectField(
-        label="Select the version you are upgrading from",
+        label="Select the version you are migrating from",
         choices=[v.value.strip() for v in Versions if v],
         validators=[validators.DataRequired()],
     )
     to_version = SelectField(
-        label="Select the version you are upgrading to",
+        label="Select the version you are migrating to",
         choices=[v.value.strip() for v in Versions if v],
         validators=[validators.DataRequired()],
     )
