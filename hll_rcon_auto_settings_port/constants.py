@@ -11,6 +11,7 @@ class Versions(Enum):
     v9_9_1 = "v9.9.1"
     v9_9_2 = "v9.9.2"
     v9_9_3 = "v9.9.3"
+    v9_9_4 = "v9.9.4"
     v10_0_0 = "v10.0.0"
 
 
@@ -72,11 +73,17 @@ V_10_0_0_TO_V9_9_1_CMD_MAPPING = {
 
 
 UP_VERSION_TO_CMD_MAPPING = {
-    Versions.v9_9_1: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING}
+    Versions.v9_9_1: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v9_9_2: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v9_9_3: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v9_9_4: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
 }
 
 DOWN_VERSION_TO_CMD_MAPPING = {
-    Versions.v10_0_0: {Versions.v9_9_1: V_10_0_0_TO_V9_9_1_CMD_MAPPING}
+    Versions.v10_0_0: {Versions.v9_9_1: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v10_0_0: {Versions.v9_9_2: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v10_0_0: {Versions.v9_9_3: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v10_0_0: {Versions.v9_9_4: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
 }
 
 V9_9_1_TO_V_10_0_0_ARG_MAPPING = {
