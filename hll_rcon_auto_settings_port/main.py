@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
         # validate_settings(data)
         upgrade(
-            from_version=Versions.v9_9_1.value,
+            from_version=Versions.v9_x.value,
             to_version=Versions.v10_0_0.value,
             payload=data,
         )

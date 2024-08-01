@@ -188,9 +188,3 @@ def upgrade(
     # pprint(updated_auto_settings)
 
     return updated_auto_settings
-
-
-def downgrade(
-    from_version: str, to_version: str, payload: dict[str, Any]
-) -> dict[str, Any]:
-    return upgrade(from_version=to_version, to_version=from_version, payload=payload)
