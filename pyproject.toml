@@ -12,6 +12,7 @@ flask = "^3.0.3"
 pydantic = "^2.7.2"
 flask-wtf = "^1.2.1"
 gunicorn = "^22.0.0"
+loguru = "^0.7.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.2"
