@@ -65,6 +65,9 @@ V9_9_1_TO_V_10_0_0_CMD_MAPPING = {
     "public_info": "get_public_info",
     "server_list": "get_server_list",
     "live_scoreboard": "get_live_scoreboard",
+    "set_votekick_threshold": "set_votekick_thresholds",
+    # Hasn't changed names but needs the argument names updated
+    "set_broadcast": "set_broadcast",
 }
 
 V_10_0_0_TO_V9_9_1_CMD_MAPPING = {
@@ -73,10 +76,10 @@ V_10_0_0_TO_V9_9_1_CMD_MAPPING = {
 
 
 UP_VERSION_TO_CMD_MAPPING = {
-    Versions.v9_9_1: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
-    Versions.v9_9_2: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
-    Versions.v9_9_3: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
-    Versions.v9_9_4: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_CMD_MAPPING},
+    Versions.v9_9_1: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_CMD_MAPPING},
+    Versions.v9_9_2: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_CMD_MAPPING},
+    Versions.v9_9_3: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_CMD_MAPPING},
+    Versions.v9_9_4: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_CMD_MAPPING},
 }
 
 DOWN_VERSION_TO_CMD_MAPPING = {
@@ -105,6 +108,7 @@ V9_9_1_TO_V_10_0_0_ARG_MAPPING = {
     "do_remove_temp_ban": {"steam_id_64": "player_id"},
     "do_remove_vip": {"steam_id_64": "player_id"},
     "set_broadcast": {"msg": "message"},
+    "set_welcome_message": {"msg": "message"},
     "do_switch_player_now": {"player": "player_name"},
     "do_switch_player_on_death": {"player": "player_name"},
     "do_temp_ban": {"steam_id_64": "player_id", "name": "player_name"},
@@ -120,16 +124,29 @@ V9_9_1_TO_V_10_0_0_ARG_MAPPING = {
     "set_votekick_enabled": {"bool_": "value"},
 }
 
+V9_9_1_TO_V_10_0_0_REMOVED_ARG_MAPPING = {
+    "set_welcome_message": set(["save"]),
+    "set_broadcast": set(["save"]),
+}
+
 V_10_0_0_TO_V9_9_1_ARG_MAPPING = {
     k: {k2: v2 for k2, v2 in v.items()}
     for k, v in V9_9_1_TO_V_10_0_0_ARG_MAPPING.items()
 }
+
 
 UP_VERSION_TO_ARG_MAPPING = {
     Versions.v9_9_1: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_ARG_MAPPING},
     Versions.v9_9_2: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_ARG_MAPPING},
     Versions.v9_9_3: {Versions.v10_0_0: V_10_0_0_TO_V9_9_1_ARG_MAPPING},
 }
+UP_VERSION_TO_REMOVED_ARG_MAPPING = {
+    Versions.v9_9_1: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_REMOVED_ARG_MAPPING},
+    Versions.v9_9_2: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_REMOVED_ARG_MAPPING},
+    Versions.v9_9_1: {Versions.v10_0_0: V9_9_1_TO_V_10_0_0_REMOVED_ARG_MAPPING},
+}
+
+
 DOWN_VERSION_TO_ARG_MAPPING = {
     Versions.v10_0_0: {Versions.v9_9_1: V_10_0_0_TO_V9_9_1_ARG_MAPPING},
     Versions.v10_0_0: {Versions.v9_9_2: V_10_0_0_TO_V9_9_1_ARG_MAPPING},

@@ -1,10 +1,13 @@
 import json
 
 from flask import Flask, render_template, request
+from loguru import logger
 from wtforms import Form, SelectField, TextAreaField, validators
 
 from hll_rcon_auto_settings_port.constants import Versions
 from hll_rcon_auto_settings_port.utils import downgrade, upgrade
+
+logger.add("debug.log", mode="w")
 
 app = Flask(__name__)
 
@@ -82,5 +85,9 @@ def hello_world():
         new_settings = json.dumps(new_settings, indent=2)
     else:
         new_settings = ""
+
+    if app.debug:
+        with open("dump.json", "w") as fp:
+            fp.write(new_settings)
 
     return render_template("index.html", form=form, new_settings=new_settings)
