@@ -113,6 +113,7 @@ V9_9_1_TO_V_10_0_0_ARG_MAPPING = {
     "set_vip_slots_num": {"num": "value"},
     "set_autobalance_enabled": {"bool_": "value"},
     "set_votekick_enabled": {"bool_": "value"},
+    "set_maprotation": {"rotation": "map_names"},
 }
 
 V9_9_1_TO_V_10_0_0_REMOVED_ARG_MAPPING = {
