@@ -116,6 +116,10 @@ def upgrade(
         constants.RULES: [],
         constants.AVAILABLE_COMMANDS: {},
         constants.AVAILABLE_CONDITIONS: {},
+        constants.AVAILABLE_SETTINGS: {
+            "always_apply_defaults": "Whether or not to apply the settings defined in the default section in each iteration. Allowed values: true / false",
+            "can_invoke_multiple_rules": "Whether or not to allow the invocation of multiple rules e.g. don't stop after the first fulfilled rule. Allowed values: true / false",
+        },
     }
 
     # top level keys

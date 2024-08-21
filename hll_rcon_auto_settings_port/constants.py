@@ -5,6 +5,7 @@ DEFAULTS = "defaults"
 RULES = "rules"
 AVAILABLE_COMMANDS = "_available_commands"
 AVAILABLE_CONDITIONS = "_available_conditions"
+AVAILABLE_SETTINGS = "_available_settings"
 
 
 class Versions(Enum):
